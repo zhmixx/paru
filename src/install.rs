@@ -547,7 +547,7 @@ impl Installer {
             }
             let mut chroot_flags: Vec<&str> =
                 config.chroot_flags.iter().map(|s| s.as_str()).collect();
-            chroot_flags.push("-cu");
+            chroot_flags.push("-c");
             self.chroot
                 .build(dir, &extra, &chroot_flags, &["-ofA"], &config.env)
                 .with_context(|| tr!("failed to download sources for '{}'", base))?;
