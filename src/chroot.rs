@@ -119,7 +119,7 @@ impl Chroot {
             .arg(dir.join(db.strip_prefix("/")?));
         let _ = exec::command(&mut cmd);
 
-        self.run(&["pacman", "-Syu", "--noconfirm"])
+        self.run(&["pacman", "-Su", "--noconfirm"])
     }
 
     pub fn build<S: AsRef<OsStr>>(
